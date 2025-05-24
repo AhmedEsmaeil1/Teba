@@ -1,239 +1,142 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>فندق SHERK - الغردقة</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <title>فندق الشروق</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fff;
-      color: #333;
-      overflow-x: hidden;
+    body, html {
+      margin: 0; padding: 0; height: 100%; overflow-x: hidden; font-family: Arial, sans-serif;
     }
-
-    video.bg-video {
+    #background-video {
       position: fixed;
-      right: 0;
-      bottom: 0;
-      min-width: 100%;
-      min-height: 100%;
+      right: 0; bottom: 0;
+      min-width: 100%; min-height: 100%;
       z-index: -1;
       object-fit: cover;
     }
-
     header {
-      background-color: rgba(0, 68, 102, 0.9);
-      color: #fff;
-      padding: 20px 0;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    header .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 20px;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #00ccff;
-    }
-
-    .hero {
+      background: rgba(255,255,255,0.85);
+      padding: 20px;
       text-align: center;
-      padding: 80px 20px 40px;
-      color: white;
-      animation: fadeInDown 1.5s ease-in-out;
-    }
-
-    @keyframes fadeInDown {
-      0% { opacity: 0; transform: translateY(-50px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    .hero h2 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-
-    .btn {
-      padding: 10px 20px;
-      background-color: #0099cc;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: #0077aa;
-    }
-
-    .section {
-      padding: 50px 20px;
-    }
-
-    .section h3 {
-      text-align: center;
-      margin-bottom: 30px;
       font-size: 2rem;
-      color: #004466;
+      font-weight: bold;
+      color: #333;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
-
-    .gallery-grid {
+    .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 15px;
+      margin: 20px;
+      background: rgba(255,255,255,0.85);
+      padding: 15px;
+      border-radius: 10px;
     }
-
-    .gallery-grid a {
-      display: inline-block;
-    }
-
-    .gallery-grid img {
-      width: 300px;
-      height: 200px;
+    .gallery img {
+      width: 200px;
+      height: 130px;
       object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 8px;
       cursor: pointer;
+      transition: transform 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }
-
-    .gallery-grid img:hover {
-      transform: scale(1.07);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
     }
-
-    .desc {
-      text-align: center;
-      margin-top: 10px;
-      font-size: 0.9rem;
-      color: #444;
+    .description-box {
+      max-width: 800px;
+      margin: 20px auto;
+      background: rgba(255,255,255,0.9);
+      border-radius: 10px;
+      padding: 15px 20px;
+      font-size: 1.1rem;
+      color: #333;
+      display: none;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
-
-    footer {
-      background-color: #004466;
+    .booking-btn {
+      display: inline-block;
+      background: #007bff;
       color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 30px;
+      padding: 10px 18px;
+      border-radius: 6px;
+      margin-top: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .booking-btn:hover {
+      background: #0056b3;
     }
   </style>
 </head>
 <body>
-  <video class="bg-video" autoplay loop muted playsinline>
-    <source src="videos/main.mp4" type="video/mp4">
-    متصفحك لا يدعم تشغيل الفيديو.
+
+  <!-- فيديو الخلفية -->
+  <video id="background-video" autoplay muted loop playsinline>
+    <source src="videos/main.mp4" type="video/mp4" />
+    متصفحك لا يدعم عرض الفيديو.
   </video>
 
-  <header>
-    <div class="container">
-      <h1>فندق SHERK</h1>
-      <nav>
-        <a href="#restaurants">المطاعم</a>
-        <a href="#villas">الفلل</a>
-        <a href="#pools">حمامات السباحة</a>
-        <a href="#staff">فريق العمل</a>
-        <a href="#about">من نحن</a>
-        <a href="#contact">اتصل بنا</a>
-      </nav>
-    </div>
-  </header>
+  <header>فندق الشروق - تجربة فريدة على البحر الأحمر</header>
 
-  <section class="hero">
-    <h2>أهلاً بك في فندق SHERK - الغردقة</h2>
-    <p>احجز غرفتك أو فيلتك أو شاليهك واستمتع بأفضل تجربة بحرية</p>
-    <a href="booking.html" class="btn">احجز الآن</a>
+  <section class="gallery" aria-label="معرض صور الفندق">
+    <img src="images/OWNER.jpg.jpeg" alt="مالك الفندق" data-desc="مالك الفندق ووجهه المميز." />
+    <img src="images/pool.jpg.jpg" alt="حمام سباحة 1" data-desc="حمام سباحة رائع ومميز." />
+    <img src="images/pool2.jpg.jpg" alt="حمام سباحة 2" data-desc="منظر آخر لحمام السباحة." />
+    <img src="images/pool3.jpg.jpg" alt="حمام سباحة 3" data-desc="حمام سباحة واسع ومساحات للاسترخاء." />
+    <img src="images/pool4.jpg.jpg" alt="حمام سباحة 4" data-desc="تصميم حديث لحمام السباحة." />
+    <img src="images/pool5.jpg.jpg" alt="حمام سباحة 5" data-desc="حمام سباحة مع جلسات مائية." />
+    <img src="images/pool6.jpg.jpg" alt="حمام سباحة 6" data-desc="مشهد رائع لحمام السباحة ليلاً." />
+    <img src="images/pool7.jpg.jpg" alt="حمام سباحة 7" data-desc="مكان مثالي للسباحة والاستجمام." />
+    <img src="images/pool12.jpg.jpg" alt="حمام سباحة 12" data-desc="مساحة حمام سباحة كبيرة ومريحة." />
+    <img src="images/pool22.jpg.jpg" alt="حمام سباحة 22" data-desc="تصميم مائي فريد." />
+    <img src="images/pool43.jpg.jpg" alt="حمام سباحة 43" data-desc="منظر حمام السباحة مع النباتات." />
+    <img src="images/pool44.jpg.jpg" alt="حمام سباحة 44" data-desc="جلسات بجانب المسبح." />
+    <img src="images/pool234.jpg.jpg" alt="حمام سباحة 234" data-desc="مكان هادئ بجانب المسبح." />
+    <img src="images/pool432.jpg.jpg" alt="حمام سباحة 432" data-desc="تصميم رائع للمسبح." />
+    <img src="images/pool2121.jpg.jpg" alt="حمام سباحة 2121" data-desc="حمام سباحة للاسترخاء." />
+    <img src="images/pool2221.jpg.jpg" alt="حمام سباحة 2221" data-desc="مسبح بمواصفات عالمية." />
+    <img src="images/pool4522.jpg.jpg" alt="حمام سباحة 4522" data-desc="مسبح واسع ومريح." />
+    <img src="images/pool123112.jpg.jpg" alt="حمام سباحة 123112" data-desc="تصميم عصري للمسبح." />
+    <img src="images/res.jpg.jpeg" alt="الاستقبال" data-desc="منطقة استقبال الفندق." />
+    <img src="images/RESTRAURANT.jpg.jpg" alt="المطعم 1" data-desc="مطعم يقدم أطباق عالمية." />
+    <img src="images/RESTRAURANT2.jpg.jpg" alt="المطعم 2" data-desc="جلسات داخل المطعم." />
+    <img src="images/staf.jpg.jpg" alt="طاقم العمل 1" data-desc="طاقم العمل يرحب بكم." />
+    <img src="images/staf2.jpg.jpg" alt="طاقم العمل 2" data-desc="فريق عمل محترف." />
+    <img src="images/stafe32.jpg.jpg" alt="طاقم العمل 3" data-desc="خدمة مميزة من الطاقم." />
+    <img src="images/stafe2331.jpg.jpg" alt="طاقم العمل 4" data-desc="طاقم عمل ودود ومتعاون." />
+    <img src="images/tripma.jpg.jpeg" alt="رحلات" data-desc="تنظيم رحلات بحرية ممتعة." />
+    <img src="images/villa.jpg.jpg" alt="فيلا 1" data-desc="فيلا فاخرة مع إطلالة على البحر." />
+    <img src="images/villa2.jpg.jpg" alt="فيلا 2" data-desc="فيلا حديثة بتصميم أنيق." />
+    <img src="images/villa3.jpg.jpg" alt="فيلا 3" data-desc="فيلا مريحة ومجهزة بالكامل." />
+    <img src="images/villa4.jpg.jpg" alt="فيلا 4" data-desc="فيلا واسعة تناسب العائلات." />
+    <img src="images/home.jpg.jpeg" alt="واجهة الفندق" data-desc="تصميم خارجي للفندق." />
+    <img src="images/imagesdecor.png.jpg" alt="ديكور" data-desc="ديكور داخلي أنيق." />
   </section>
 
-  <section class="section" id="restaurants">
-    <h3>المطاعم</h3>
-    <div class="gallery-grid">
-      <a href="#desc1"><img src="images/RESTRAURANT.jpg.jpg" alt="مطعم الفندق" /></a>
-      <a href="#desc2"><img src="images/RESTRAURANT2.jpg.jpg" alt="مطعم الفندق 2" /></a>
-    </div>
-    <div id="desc1" class="desc">مطعم راقٍ يقدم أشهى المأكولات البحرية والعالمية بإطلالة على البحر.</div>
-    <div id="desc2" class="desc">بوفيه مفتوح طوال اليوم مع تنوع واسع في الأطباق الشرقية والغربية.</div>
-  </section>
+  <div class="description-box" id="desc-box"></div>
 
-  <section class="section" id="villas">
-    <h3>الفلل الفاخرة</h3>
-    <div class="gallery-grid">
-      <a href="#v1"><img src="images/villa.jpg.jpg" alt="فيلا فاخرة" /></a>
-      <a href="#v2"><img src="images/villa2.jpg.jpg" alt="فيلا فاخرة 2" /></a>
-      <a href="#v3"><img src="images/villa3.jpg.jpg" alt="فيلا فاخرة 3" /></a>
-      <a href="#v4"><img src="images/villa4.jpg.jpg" alt="فيلا فاخرة 4" /></a>
-    </div>
-    <div id="v1" class="desc">فيلا مطلة على البحر مباشرة، تحتوي على حمام سباحة خاص وحديقة.</div>
-    <div id="v2" class="desc">فيلا من دورين مع جاكوزي وحديقة خارجية مميزة.</div>
-    <div id="v3" class="desc">فيلا ذات تصميم عصري، مثالية للعائلات الكبيرة.</div>
-    <div id="v4" class="desc">إطلالة جبلية ساحرة وأجواء هادئة ومريحة للنفس.</div>
-  </section>
+  <script>
+    const images = document.querySelectorAll('.gallery img');
+    const descBox = document.getElementById('desc-box');
 
-  <section class="section" id="pools">
-    <h3>حمامات السباحة</h3>
-    <div class="gallery-grid">
-      <a href="#p1"><img src="images/pool.jpg.jpg" alt="حمام السباحة" /></a>
-      <a href="#p2"><img src="images/pool2.jpg.jpg" alt="حمام السباحة 2" /></a>
-    </div>
-    <div id="p1" class="desc">حمام سباحة رئيسي واسع مع بار ومقاعد مائية.</div>
-    <div id="p2" class="desc">حمام سباحة للأطفال مع ألعاب مائية ممتعة وآمنة.</div>
-  </section>
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        const description = img.getAttribute('data-desc');
+        descBox.style.display = 'block';
+        descBox.innerHTML = `
+          <p>${description}</p>
+          <a href="#" class="booking-btn">احجز الآن</a>
+        `;
+        descBox.scrollIntoView({behavior: 'smooth'});
+      });
+    });
+  </script>
 
-  <section class="section" id="staff">
-    <h3>فريق العمل</h3>
-    <div class="gallery-grid">
-      <a href="#s1"><img src="images/staf.jpg.jpg" alt="فريق العمل" /></a>
-      <a href="#s2"><img src="images/staf2.jpg.jpg" alt="فريق العمل 2" /></a>
-    </div>
-    <div id="s1" class="desc">أحمد - مدير الاستقبال، يتميز بابتسامته الدائمة وحسن تعامله مع الضيوف.</div>
-    <div id="s2" class="desc">محمود - مسؤول الصيانة، خبير في حل المشكلات بسرعة وكفاءة.</div>
-  </section>
-
-  <section class="section" id="about">
-    <h3>من نحن</h3>
-    <p style="text-align: center; font-size: 1.1rem; max-width: 700px; margin: auto;">
-      فندق SHERK هو فندق فاخر يقع في قلب مدينة الغردقة، يقدم لضيوفه تجربة استثنائية تجمع بين الراحة، الترفيه، والضيافة المصرية الأصيلة. يتميز الفندق بموقعه المثالي، خدماته الممتازة، وفريق العمل المتفاني. هدفنا هو توفير إقامة لا تُنسى لكل ضيف.
-    </p>
-  </section>
-
-  <section class="section" id="contact">
-    <h3>اتصل بنا</h3>
-    <p style="text-align: center; font-size: 1.1rem; max-width: 600px; margin: auto;">
-      لأي استفسارات أو حجز، يرجى التواصل معنا عبر:
-      <br />
-      الهاتف: <strong>+20 102 862 5220</strong>
-      <br />
-      البريد الإلكتروني: <strong>info@sherkhotel.com</strong>
-    </p>
-  </section>
-
-  <footer>
-    <p>© 2025 فندق SHERK - الغردقة. كل الحقوق محفوظة.</p>
-    <p>© 2025 SHERK Hotel - Hurghada. All rights reserved.</p>
-    <p>Contact us: <strong>+20 102 862 5220</strong></p>
-    <p>Owned by Ahmed Ismail and his partner Mahmoud Abdelrazek</p>
-  </footer>
 </body>
 </html>
