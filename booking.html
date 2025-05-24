@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>حجز في فندق Elsherk Hotel</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>فندق Elsherk Hotel</h1>
+      <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="booking.html">الحجز</a>
+        <a href="about.html">عن الفندق</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="booking container">
+    <h2>احجز غرفتك الآن</h2>
+    <form id="booking-form">
+      <label for="room-type">نوع الغرفة:</label>
+      <select id="room-type" name="room-type" required>
+        <option value="" disabled selected>اختر نوع الغرفة</option>
+        <option value="room">غرفة</option>
+        <option value="suite">سويت</option>
+        <option value="villa">فيلا</option>
+        <option value="chalet">شاليه</option>
+      </select>
+
+      <label for="room-number">رقم الغرفة:</label>
+      <select id="room-number" name="room-number" required>
+        <option value="" disabled selected>اختر رقم الغرفة</option>
+      </select>
+
+      <label for="check-in">تاريخ الوصول:</label>
+      <input type="date" id="check-in" name="check-in" required />
+
+      <label for="check-out">تاريخ المغادرة:</label>
+      <input type="date" id="check-out" name="check-out" required />
+
+      <button type="submit" class="btn">احجز الآن</button>
+    </form>
+
+    <div id="confirmation" class="confirmation" style="margin-top: 20px; color: green; font-weight: bold;"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 فندق Elsherk Hotel - الغردقة. كل الحقوق محفوظة.</p>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>

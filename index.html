@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>فندق SHERK - الغردقة</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    video.bg-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    }
+
+    header {
+      background-color: rgba(0, 68, 102, 0.9);
+      color: #fff;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00ccff;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px 40px;
+      color: white;
+      animation: fadeInDown 1.5s ease-in-out;
+    }
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background-color: #0099cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #0077aa;
+    }
+
+    .section {
+      padding: 50px 20px;
+    }
+
+    .section h3 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #004466;
+    }
+
+    .gallery-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .gallery-grid a {
+      display: inline-block;
+    }
+
+    .gallery-grid img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.07);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    .desc {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    footer {
+      background-color: #004466;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <video class="bg-video" autoplay loop muted playsinline>
+    <source src="videos/main.mp4" type="video/mp4">
+    متصفحك لا يدعم تشغيل الفيديو.
+  </video>
+
+  <header>
+    <div class="container">
+      <h1>فندق SHERK</h1>
+      <nav>
+        <a href="#restaurants">المطاعم</a>
+        <a href="#villas">الفلل</a>
+        <a href="#pools">حمامات السباحة</a>
+        <a href="#staff">فريق العمل</a>
+        <a href="#about">من نحن</a>
+        <a href="#contact">اتصل بنا</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h2>أهلاً بك في فندق SHERK - الغردقة</h2>
+    <p>احجز غرفتك أو فيلتك أو شاليهك واستمتع بأفضل تجربة بحرية</p>
+    <a href="booking.html" class="btn">احجز الآن</a>
+  </section>
+
+  <section class="section" id="restaurants">
+    <h3>المطاعم</h3>
+    <div class="gallery-grid">
+      <a href="#desc1"><img src="images/RESTRAURANT.jpg.jpg" alt="مطعم الفندق" /></a>
+      <a href="#desc2"><img src="images/RESTRAURANT2.jpg.jpg" alt="مطعم الفندق 2" /></a>
+    </div>
+    <div id="desc1" class="desc">مطعم راقٍ يقدم أشهى المأكولات البحرية والعالمية بإطلالة على البحر.</div>
+    <div id="desc2" class="desc">بوفيه مفتوح طوال اليوم مع تنوع واسع في الأطباق الشرقية والغربية.</div>
+  </section>
+
+  <section class="section" id="villas">
+    <h3>الفلل الفاخرة</h3>
+    <div class="gallery-grid">
+      <a href="#v1"><img src="images/villa.jpg.jpg" alt="فيلا فاخرة" /></a>
+      <a href="#v2"><img src="images/villa2.jpg.jpg" alt="فيلا فاخرة 2" /></a>
+      <a href="#v3"><img src="images/villa3.jpg.jpg" alt="فيلا فاخرة 3" /></a>
+      <a href="#v4"><img src="images/villa4.jpg.jpg" alt="فيلا فاخرة 4" /></a>
+    </div>
+    <div id="v1" class="desc">فيلا مطلة على البحر مباشرة، تحتوي على حمام سباحة خاص وحديقة.</div>
+    <div id="v2" class="desc">فيلا من دورين مع جاكوزي وحديقة خارجية مميزة.</div>
+    <div id="v3" class="desc">فيلا ذات تصميم عصري، مثالية للعائلات الكبيرة.</div>
+    <div id="v4" class="desc">إطلالة جبلية ساحرة وأجواء هادئة ومريحة للنفس.</div>
+  </section>
+
+  <section class="section" id="pools">
+    <h3>حمامات السباحة</h3>
+    <div class="gallery-grid">
+      <a href="#p1"><img src="images/pool.jpg.jpg" alt="حمام السباحة" /></a>
+      <a href="#p2"><img src="images/pool2.jpg.jpg" alt="حمام السباحة 2" /></a>
+    </div>
+    <div id="p1" class="desc">حمام سباحة رئيسي واسع مع بار ومقاعد مائية.</div>
+    <div id="p2" class="desc">حمام سباحة للأطفال مع ألعاب مائية ممتعة وآمنة.</div>
+  </section>
+
+  <section class="section" id="staff">
+    <h3>فريق العمل</h3>
+    <div class="gallery-grid">
+      <a href="#s1"><img src="images/staf.jpg.jpg" alt="فريق العمل" /></a>
+      <a href="#s2"><img src="images/staf2.jpg.jpg" alt="فريق العمل 2" /></a>
+    </div>
+    <div id="s1" class="desc">أحمد - مدير الاستقبال، يتميز بابتسامته الدائمة وحسن تعامله مع الضيوف.</div>
+    <div id="s2" class="desc">محمود - مسؤول الصيانة، خبير في حل المشكلات بسرعة وكفاءة.</div>
+  </section>
+
+  <section class="section" id="about">
+    <h3>من نحن</h3>
+    <p style="text-align: center; font-size: 1.1rem; max-width: 700px; margin: auto;">
+      فندق SHERK هو فندق فاخر يقع في قلب مدينة الغردقة، يقدم لضيوفه تجربة استثنائية تجمع بين الراحة، الترفيه، والضيافة المصرية الأصيلة. يتميز الفندق بموقعه المثالي، خدماته الممتازة، وفريق العمل المتفاني. هدفنا هو توفير إقامة لا تُنسى لكل ضيف.
+    </p>
+  </section>
+
+  <section class="section" id="contact">
+    <h3>اتصل بنا</h3>
+    <p style="text-align: center; font-size: 1.1rem; max-width: 600px; margin: auto;">
+      لأي استفسارات أو حجز، يرجى التواصل معنا عبر:
+      <br />
+      الهاتف: <strong>+20 102 862 5220</strong>
+      <br />
+      البريد الإلكتروني: <strong>info@sherkhotel.com</strong>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 فندق SHERK - الغردقة. كل الحقوق محفوظة.</p>
+    <p>© 2025 SHERK Hotel - Hurghada. All rights reserved.</p>
+    <p>Contact us: <strong>+20 102 862 5220</strong></p>
+    <p>Owned by Ahmed Ismail and his partner Mahmoud Abdelrazek</p>
+  </footer>
+</body>
+</html>
